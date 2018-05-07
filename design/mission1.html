@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>设计师学院任务1</title>
+  <style>
+    .container {
+      width: 200px;
+      position: relative;
+    }
+    .transition-part {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .transition-text {
+      margin: 0 auto;
+      transition: all 2s;
+      font-size: 25px;
+    }
+    .transition-text.before {
+      color: #000;
+    }
+    .transition-text.after {
+      color: #416CEC; /* 文字颜色 */
+    }
+    .transition-underline {
+      height: 2px;
+      width: 0px;
+      margin: 0 auto;
+      transition: width 2s;
+      background-color: #416CEC;
+    }
+    .transition-underline.before {
+      width: 0px;
+    }
+    .transition-underline.after {
+      width: 100%;
+    }
+    .switch-btn {
+      width: 100%;
+      margin-top: 20px;
+      color: #000;
+      border: 1px solid #DDD;
+      border-radius: 5px;
+      background: #FFF;
+      outline: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="transition-part">
+      <p class="transition-text">前端学院</p>
+      <div class="transition-underline"></div>
+      <button class="switch-btn">切换样式</button>
+    </div>
+  </div>
+  <script>
+    let flag = 0
+    let btn = document.querySelector(".switch-btn")
+    let text = document.querySelector(".transition-text")
+    let underline = document.querySelector(".transition-underline")
+    btn.addEventListener("click", function () {
+      if (flag) {
+        // 褪色
+        text.className = "transition-text before"
+        underline.className = "transition-underline before"
+        flag = 0
+      } else {
+        // 变色
+        text.className = "transition-text after"
+        underline.className = "transition-underline after"
+        flag = 1
+      }
+    })
+  </script>
+</body>
+</html>
