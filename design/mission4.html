@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>设计师学院任务2</title>
+  <style>
+    .card {
+      position: absolute;
+      transition: transform 1s;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .front {
+      z-index: 2;
+    }
+    .back {
+      z-index: 1;
+      transform: rotateY(180deg);
+    }
+    .wrap:hover .front {
+      transform: rotateY(180deg);
+    }
+    .wrap:hover .back {
+      transform: rotateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <img src="front.jpg" alt="正面" class="card front">
+    <img src="back.jpg" alt="反面" class="card back">
+  </div>
+</body>
+</html>
