@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>设计师学院任务2</title>
+  <style>
+    .box, .custom-box {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      margin: 20px;
+      text-align: center;
+      line-height: 100px;
+      border: 1px solid #EDEDED;
+      background: #F8F5F7;
+    }
+    .box:nth-child(2) {
+      transform: skewX(30deg);
+    }
+    .box:nth-child(3) {
+      transform: scaleX(0.5);
+    }
+    .box:nth-child(4) {
+      transform: rotate(45deg);
+    }
+    .box:nth-child(5) {
+      transform: translate(10px, 20px);
+    }
+    .box:nth-child(6) {
+      transform: skewX(30deg) scaleX(0.5) rotate(45deg) translate(10px, 20px);
+    }
+    .custom-box:nth-child(1) {
+      transform: rotate(45deg)
+    }
+    .custom-box:nth-child(2) {
+      transform-origin: 50% 20%;
+      transform: rotate(45deg)
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="box">box0</div>
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <div class="box">box3</div>
+    <div class="box">box4</div>
+    <div class="box">box5</div>
+  </div>
+  <div>
+    <div class="custom-box">自定义盒子1</div>
+    <div class="custom-box">自定义盒子2</div>
+  </div>
+</body>
+</html>
